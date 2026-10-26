@@ -1,0 +1,11 @@
+project: savantenvs/oiio
+target: fuzz_psd
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_psd/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_psd
+    libfuzzer: true
+    timeout: 30
+    env:
+      OIIO_FUZZ_FORMAT: psd

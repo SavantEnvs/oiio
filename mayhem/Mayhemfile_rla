@@ -1,0 +1,11 @@
+project: savantenvs/oiio
+target: fuzz_rla
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_rla/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_rla
+    libfuzzer: true
+    timeout: 30
+    env:
+      OIIO_FUZZ_FORMAT: rla

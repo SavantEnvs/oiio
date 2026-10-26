@@ -1,0 +1,11 @@
+project: savantenvs/oiio
+target: fuzz_hdr
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_hdr/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_hdr
+    libfuzzer: true
+    timeout: 30
+    env:
+      OIIO_FUZZ_FORMAT: hdr

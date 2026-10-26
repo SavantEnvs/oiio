@@ -1,0 +1,11 @@
+project: savantenvs/oiio
+target: fuzz_sgi
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_sgi/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_sgi
+    libfuzzer: true
+    timeout: 30
+    env:
+      OIIO_FUZZ_FORMAT: sgi
