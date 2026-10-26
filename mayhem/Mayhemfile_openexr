@@ -1,0 +1,11 @@
+project: savantenvs/oiio
+target: fuzz_openexr
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_openexr/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_openexr
+    libfuzzer: true
+    timeout: 30
+    env:
+      OIIO_FUZZ_FORMAT: openexr
