@@ -1,0 +1,11 @@
+project: savantenvs/oiio
+target: fuzz_jpeg2000
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_jpeg2000/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_jpeg2000
+    libfuzzer: true
+    timeout: 30
+    env:
+      OIIO_FUZZ_FORMAT: jpeg2000

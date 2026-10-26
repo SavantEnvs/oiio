@@ -1,0 +1,11 @@
+project: savantenvs/oiio
+target: fuzz_bmp
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_bmp/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_bmp
+    libfuzzer: true
+    timeout: 30
+    env:
+      OIIO_FUZZ_FORMAT: bmp

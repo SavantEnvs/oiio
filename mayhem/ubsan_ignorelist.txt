@@ -1,0 +1,4 @@
+# stb_sprintf stores 4 bytes at an unaligned address on purpose (guarded by an x86 check);
+# OIIO's error formatting hits it on every reader's error path.
+[alignment]
+src:*/src/libutil/stb_sprintf.h
